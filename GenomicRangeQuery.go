@@ -4,41 +4,38 @@ import "fmt"
 
 func Solution(S string, P []int, Q []int) []int {
 	M, N := len(P), len(S)
+	types := [...]byte{'A', 'C', 'G', 'T'}
+	factors := [...]int{1, 2, 3, 4}
+	ntypes := len(types)
+	indexMap := make(map[byte]int, ntypes) // letter to prefixCounts index
+	for i := 0; i < ntypes; i++ {
+		indexMap[types[i]] = i
+	}
+
 	//A, C, G and T
-	aCounts := make([]int, N+1)
-	cCounts := make([]int, N+1)
-	gCounts := make([]int, N+1)
+	prefixCounts := make([][]int, ntypes-1) //Prefix counts of A, C, G
+	for i := 0; i < len(prefixCounts); i++ {
+		prefixCounts[i] = make([]int, N+1)
+	}
 
 	for i := 0; i < N; i++ {
-		aCounts[i+1] = aCounts[i]
-		cCounts[i+1] = cCounts[i]
-		gCounts[i+1] = gCounts[i]
-		var counts []int
-		switch S[i] {
-		case 'A':
-			counts = aCounts
-		case 'C':
-			counts = cCounts
-		case 'G':
-			counts = gCounts
+		for j := 0; j < len(prefixCounts); j++ {
+			prefixCounts[j][i+1] = prefixCounts[j][i]
 		}
-		if counts == nil {
-			continue
+		index := indexMap[S[i]]
+		if index < len(prefixCounts) {
+			prefixCounts[index][i+1]++
 		}
-		counts[i+1]++
 	}
 
 	minFactors := make([]int, M)
 	for i := 0; i < M; i++ {
 		from, to := P[i], Q[i]+1
-		if aCounts[to]-aCounts[from] > 0 {
-			minFactors[i] = 1
-		} else if cCounts[to]-cCounts[from] > 0 {
-			minFactors[i] = 2
-		} else if gCounts[to]-gCounts[from] > 0 {
-			minFactors[i] = 3
-		} else {
-			minFactors[i] = 4
+		for j, f := range factors {
+			minFactors[i] = f
+			if j < len(prefixCounts) && prefixCounts[j][to]-prefixCounts[j][from] > 0 {
+				break
+			}
 		}
 	}
 	return minFactors
