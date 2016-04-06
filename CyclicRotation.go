@@ -1,8 +1,6 @@
-package main
+package codility
 
-import "fmt"
-
-func Solution(A []int, K int) []int {
+func CyclicRotation(A []int, K int) []int {
 	N := len(A)
 	if N == 0 {
 		return A
@@ -20,7 +18,7 @@ func Solution(A []int, K int) []int {
 	return rotated
 }
 
-func main() {
+/*func main() {
 	fmt.Println(Solution([]int{3, 8, 9, 7, 6}, 3)) // [9, 7, 6, 3, 8]
 	fmt.Println(Solution([]int{}, 3))              // [9, 7, 6, 3, 8]
-}
+}*/

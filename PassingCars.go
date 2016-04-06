@@ -1,6 +1,6 @@
-package main
+package codility
 
-func Solution(A []int) int {
+func ParsingCars(A []int) int {
 	// write your code in Go 1.4
 	var num0s, numPairs int
 	for _, e := range A {

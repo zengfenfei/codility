@@ -1,8 +1,6 @@
-package main
+package codility
 
-import "fmt"
-
-func Solution(A []int) int {
+func MinAvgTwoSlice(A []int) int {
 	N := len(A)
 	// There must be some 2 or 3 slices have minimal average
 	minAvg := float64(A[0]+A[1]) / 2
@@ -35,19 +33,4 @@ func Solution(A []int) int {
 		}
 	}
 	return minAvgStart
-}
-
-func main() {
-	var A [7]int
-	A[0] = 4
-	A[1] = 2
-	A[2] = 2
-	A[3] = 5
-	A[4] = 1
-	A[5] = 5
-	A[6] = 8
-	fmt.Println(Solution(A[:]))
-
-	fmt.Println(Solution([]int{10000, -10000}))
-
 }

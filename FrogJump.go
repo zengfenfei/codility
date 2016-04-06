@@ -1,6 +1,6 @@
-package main
+package codility
 
-func Solution(X int, Y int, D int) int {
+func FrogJump(X int, Y int, D int) int {
 	// write your code in Go 1.4
 	distance := Y - X
 	steps := distance / D
@@ -9,8 +9,4 @@ func Solution(X int, Y int, D int) int {
 	} else {
 		return steps + 1
 	}
-}
-
-func main() {
-	fmt.Println("steps", Solution())
 }

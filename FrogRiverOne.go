@@ -1,6 +1,6 @@
-package main
+package codility
 
-func Solution(X int, A []int) int {
+func FrogRiverOne(X int, A []int) int {
 	hasLeaves := make([]bool, X)
 	validLeafCount := 0
 	for i, e := range A {
@@ -13,8 +13,4 @@ func Solution(X int, A []int) int {
 		hasLeaves[e-1] = true
 	}
 	return -1
-}
-
-func main() {
-
 }

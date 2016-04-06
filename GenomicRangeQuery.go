@@ -1,8 +1,6 @@
-package main
+package codility
 
-import "fmt"
-
-func Solution(S string, P []int, Q []int) []int {
+func GenomicRangeQuery(S string, P []int, Q []int) []int {
 	M, N := len(P), len(S)
 	types := [...]byte{'A', 'C', 'G', 'T'}
 	factors := [...]int{1, 2, 3, 4}
@@ -41,6 +39,4 @@ func Solution(S string, P []int, Q []int) []int {
 	return minFactors
 }
 
-func main() {
-	fmt.Println("minFactors:", Solution("CAGCCTA", []int{2, 5, 0}, []int{4, 5, 6}))
-}
+//	fmt.Println("minFactors:", Solution("CAGCCTA", []int{2, 5, 0}, []int{4, 5, 6}))

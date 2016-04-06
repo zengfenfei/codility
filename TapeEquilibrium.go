@@ -1,8 +1,6 @@
-package main
+package codility
 
-import "fmt"
-
-func Solution(A []int) int {
+func TapeEquilibrium(A []int) int {
 	N := len(A)
 
 	leftSums := make([]int, N)
@@ -31,6 +29,4 @@ func absi(i int) int {
 	}
 }
 
-func main() {
-	fmt.Println("min:", Solution([]int{3, 1, 2, 4, 3}))
-}
+//fmt.Println("min:", Solution([]int{3, 1, 2, 4, 3}))

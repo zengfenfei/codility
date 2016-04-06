@@ -1,8 +1,6 @@
-package main
+package codility
 
-import "fmt"
-
-func Solution(N int, A []int) []int {
+func MaxCounters(N int, A []int) []int {
 	seq := make([]int, N)
 	max := 0
 	lastMax := 0
@@ -32,8 +30,9 @@ func Solution(N int, A []int) []int {
 	return seq
 }
 
+/*
 func main() {
 	a := []int{1, 3}
 	a[3]++
 	fmt.Println("a0", a[0])
-}
+}*/
