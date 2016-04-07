@@ -2,9 +2,15 @@ package codility_test
 
 import (
 	"fmt"
-	"testing"
 	. "github.com/zengfenfei/codility"
+	"testing"
 )
+
+func ExampleTriangle() {
+	A := []int{10, 2, 5, 1, 8, 20}
+	fmt.Println(Triangle(A))
+	// Output: 1
+}
 
 func ExampleDistinct() {
 	var A [6]int
