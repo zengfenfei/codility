@@ -1,5 +1,6 @@
 package codility
 
+//https://codility.com/programmers/task/cyclic_rotation/
 func CyclicRotation(A []int, K int) []int {
 	N := len(A)
 	if N == 0 {
@@ -17,8 +18,3 @@ func CyclicRotation(A []int, K int) []int {
 	}
 	return rotated
 }
-
-/*func main() {
-	fmt.Println(Solution([]int{3, 8, 9, 7, 6}, 3)) // [9, 7, 6, 3, 8]
-	fmt.Println(Solution([]int{}, 3))              // [9, 7, 6, 3, 8]
-}*/
