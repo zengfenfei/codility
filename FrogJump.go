@@ -1,5 +1,6 @@
 package codility
 
+//https://codility.com/programmers/task/frog_jmp/
 func FrogJump(X int, Y int, D int) int {
 	// write your code in Go 1.4
 	distance := Y - X
