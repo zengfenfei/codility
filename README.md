@@ -1,3 +1,3 @@
-# Codility demo task solutions
+# Solutions to codility public tasks in Golang
 
-The lessons: https://codility.com/programmers/lessons/. Each task has a corresponding file with same name. To examples: `go test -v`
+Solutions to codility public tasks(https://codility.com/programmers/lessons/) in golang. Each task has a corresponding file with same name. To run examples: `go test -v`.
