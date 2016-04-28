@@ -6,6 +6,23 @@ import (
 	"testing"
 )
 
+func ExampleFish() {
+	A, B := make([]int, 5), make([]int, 5)
+	A[0] = 4
+	A[1] = 3
+	A[2] = 2
+	A[3] = 1
+	A[4] = 5
+
+	B[0] = 0
+	B[1] = 1
+	B[2] = 0
+	B[3] = 0
+	B[4] = 0
+	fmt.Println(Fish(A, B))
+	// Output: 2
+}
+
 func ExampleNumberOfDiscIntersections() {
 	A := make([]int, 6)
 	A[0] = 1
